@@ -48,7 +48,7 @@ public class QuestionController {
         }
     }
 
-    @PutMapping("/question/{id}/update}")
+    @PutMapping("/question/{id}/update")
     public ResponseEntity<Question> updateQuestion(@PathVariable Long id, @RequestBody Question question) throws ChangeSetPersister.NotFoundException {
         Question updatedQuestion = questionService.updateQuestion(id, question);
         return ResponseEntity.ok(updatedQuestion);
