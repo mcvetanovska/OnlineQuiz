@@ -2,12 +2,9 @@ package org.example.onlinequiz.controller;
 
 
 import jakarta.validation.Valid;
-import lombok.Getter;
 import lombok.RequiredArgsConstructor;
-import org.apache.coyote.Response;
 import org.example.onlinequiz.model.Question;
 import org.example.onlinequiz.service.IQuestionService;
-import org.springframework.boot.autoconfigure.web.ServerProperties;
 import org.springframework.data.crossstore.ChangeSetPersister;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -19,12 +16,12 @@ import java.util.Optional;
 
 import static org.springframework.http.HttpStatus.CREATED;
 
+@CrossOrigin("http://localhost:5173")
 @RestController
 @RequestMapping("/api/quizzes")
 @RequiredArgsConstructor
 public class QuestionController {
     private final IQuestionService questionService;
-    private final ServerProperties serverProperties;
 
     @PostMapping("/create-new-question")
     public ResponseEntity<Question> createQuestion(@Valid @RequestBody Question question){
