@@ -1006,3 +1006,7 @@ VALUES (141, 'Johnny Depp'),
        (143, 'Francis Ford Coppola'),
        (144, 'Tim Allen'),
        (145, 'EVE');
+
+UPDATE question
+SET question_type = 'single-choice'
+WHERE question_type = 'multiple-choice';

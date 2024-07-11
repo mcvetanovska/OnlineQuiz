@@ -29,7 +29,7 @@ public class QuestionController {
         return ResponseEntity.status(CREATED).body(createdQuestion);
     }
 
-    @GetMapping(" /all-questions")
+    @GetMapping("/all-questions")
     public ResponseEntity<List<Question>> getAllQuestions(){
         List<Question> questions = questionService.getAllQuestions();
         return ResponseEntity.ok(questions);

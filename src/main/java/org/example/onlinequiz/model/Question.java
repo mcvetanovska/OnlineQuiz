@@ -1,6 +1,6 @@
 package org.example.onlinequiz.model;
 import jakarta.persistence.*;
-import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -15,20 +15,20 @@ public class Question {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @NotBlank
+    @NotNull
     private String question;
 
-    @NotBlank
+    @NotNull
     private String subject;
 
-    @NotBlank
+    @NotNull
     private String questionType;
 
-    @NotBlank
+    @NotNull
     @ElementCollection
     private List<String> choices;
 
-    @NotBlank
+    @NotNull
     @ElementCollection
     private List<String> correctAnswers;
 
